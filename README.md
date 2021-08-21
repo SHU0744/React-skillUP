@@ -1,2 +1,2 @@
-# React-skillUP
+# react-todo
 Created with CodeSandbox
