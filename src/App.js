@@ -1,4 +1,4 @@
-import { useState, useCallback } from "react";
+import { useState, useCallback, useMemo } from "react";
 import "./styles.css";
 import { ChildArea } from "./ChildArea";
 
@@ -9,6 +9,10 @@ export default function App() {
   const onClickOpen = () => setOpne(!opne);
   // useCallbackで再レンダリングさせない
   const onClickClose = useCallback(() => setOpne(false), [setOpne]);
+
+  //変数用の最適化
+  const temp = useMemo(() => 1 + 3, []);
+  console.log(temp);
   return (
     <div className="App">
       <input value={text} onChange={onChangeText} />
