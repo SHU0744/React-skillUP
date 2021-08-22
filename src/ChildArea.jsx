@@ -6,7 +6,7 @@ const style = {
   backgroundColor: "orange"
 };
 
-// useMemoを使用して 親のコンポーネントが更新されても自身のprposが更新されない限りレンダリングさせない
+// memoを使用して 親のコンポーネントが更新されても自身のprposが更新されない限りレンダリングさせない
 export const ChildArea = memo((prpos) => {
   const { opne, onClickClose } = prpos;
 
