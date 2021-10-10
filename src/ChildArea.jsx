@@ -2,23 +2,27 @@ import { memo } from "react";
 
 const style = {
   width: "100%",
-  height: "200px",
-  backgroundColor: "red"
+
+  height: "100px",
+  backgroundColor: "orange"
 };
 
-export const ChildArea = memo((props) => {
-  console.log("ChildAreaがレンダリングされました");
-  const { open } = props;
+// memoを使用して 親のコンポーネントが更新されても自身のprposが更新されない限りレンダリングさせない
+export const ChildArea = memo((prpos) => {
+  const { opne, onClickClose } = prpos;
+
+  // console.log("ChildAreaがレンダリングされました");
   const data = [...Array(2000).keys()];
   data.forEach(() => {
-    console.log("不可");
+    // console.log("aaa");
   });
-
   return (
     <>
-      {open ? (
+      {opne ? (
         <div style={style}>
           <p>子コンポーネント</p>
+
+          <button onClick={onClickClose}>閉じる</button>
         </div>
       ) : null}
     </>
